@@ -1,12 +1,18 @@
 import React, { useState, useEffect } from "react";
 import Dashboard from "./Dashboard";
 
+// Require 3 more component.
+// Router into Error Page.
+// Project Folder issues
+// Comit
+// Update the story Board.
 const Function = () => {
   const [items, setItem] = useState([]);
   const [weathers, setWeather] = useState({
     update: {},
     weather: {},
     psi: {},
+    region: {},
   });
 
   // This function is hypothetical and assumes you call it right after fetching your data
@@ -48,6 +54,10 @@ const Function = () => {
         console.log(error.message);
       }
     }
+  };
+
+  const selectArea = (area) => {
+    forecasts.find((forecast) => forecast.area === area);
   };
 
   useEffect(() => {
