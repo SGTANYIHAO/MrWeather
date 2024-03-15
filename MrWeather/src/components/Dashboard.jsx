@@ -1,6 +1,7 @@
 import React from "react";
 import map02 from "../img/Singapore_Map02.jpg";
 import Display from "./Display";
+import Button from "./Button";
 
 const Dashboard = (props) => {
   return (
@@ -11,13 +12,14 @@ const Dashboard = (props) => {
         {/* Import the map  */}
         <img src={map02} alt="Map of Singapore" />
         {/* Generate all map by using map function */}
-        <button
-          className="btn Sembawang"
-          name="Sembawang"
-          onClick={(event) => {
-            console.log(event.target.name);
-          }}
-        />
+
+        {props.locations.map((location) => (
+          <Button
+            btnName={location.area}
+            btnLeft={location.left}
+            btnTop={location.top}
+          />
+        ))}
       </div>
     </>
   );

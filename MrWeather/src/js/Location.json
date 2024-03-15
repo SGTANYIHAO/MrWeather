@@ -1,284 +1,284 @@
 [
   {
     "area": "Ang Mo Kio",
-    "region": "",
-    "top": "%",
-    "left": "%"
+    "region": "central",
+    "top": "35%",
+    "left": "48%"
   },
   {
     "area": "Bedok",
-    "region": "",
-    "top": "%",
-    "left": "%"
+    "region": "east",
+    "top": "60%",
+    "left": "70%"
   },
   {
     "area": "Bishan",
-    "region": "",
-    "top": "%",
-    "left": "%"
+    "region": "central",
+    "top": "40%",
+    "left": "50%"
   },
   {
     "area": "Boon Lay",
-    "region": "",
-    "top": "%",
-    "left": "%"
+    "region": "west",
+    "top": "70%",
+    "left": "25%"
   },
   {
     "area": "Bukit Batok",
-    "region": "",
-    "top": "%",
-    "left": "%"
+    "region": "west",
+    "top": "55%",
+    "left": "33%"
   },
   {
     "area": "Bukit Merah",
-    "region": "",
-    "top": "%",
-    "left": "%"
+    "region": "central",
+    "top": "52%",
+    "left": "45%"
   },
   {
     "area": "Bukit Panjang",
-    "region": "",
-    "top": "%",
-    "left": "%"
+    "region": "west",
+    "top": "50%",
+    "left": "30%"
   },
   {
     "area": "Bukit Timah",
-    "region": "",
-    "top": "%",
-    "left": "%"
+    "region": "central",
+    "top": "48%",
+    "left": "40%"
   },
   {
     "area": "Central Water Catchment",
-    "region": "",
-    "top": "%",
-    "left": "%"
+    "region": "north",
+    "top": "42%",
+    "left": "40%"
   },
   {
     "area": "Changi",
-    "region": "",
-    "top": "%",
-    "left": "%"
+    "region": "east",
+    "top": "65%",
+    "left": "75%"
   },
   {
     "area": "Choa Chu Kang",
-    "region": "",
-    "top": "%",
-    "left": "%"
+    "region": "west",
+    "top": "55%",
+    "left": "28%"
   },
   {
     "area": "Clementi",
-    "region": "",
-    "top": "%",
-    "left": "%"
+    "region": "west",
+    "top": "58%",
+    "left": "35%"
   },
   {
     "area": "City",
-    "region": "",
-    "top": "%",
-    "left": "%"
+    "region": "central",
+    "top": "50%",
+    "left": "50%"
   },
   {
     "area": "Geylang",
-    "region": "",
-    "top": "%",
-    "left": "%"
+    "region": "central",
+    "top": "58%",
+    "left": "60%"
   },
   {
     "area": "Hougang",
-    "region": "",
-    "top": "%",
-    "left": "%"
+    "region": "northeast",
+    "top": "45%",
+    "left": "55%"
   },
   {
     "area": "Jalan Bahar",
-    "region": "",
-    "top": "%",
-    "left": "%"
+    "region": "west",
+    "top": "65%",
+    "left": "20%"
   },
   {
     "area": "Jurong East",
-    "region": "",
-    "top": "%",
-    "left": "%"
+    "region": "west",
+    "top": "60%",
+    "left": "28%"
   },
   {
     "area": "Jurong Island",
-    "region": "",
-    "top": "%",
-    "left": "%"
+    "region": "southwest",
+    "top": "75%",
+    "left": "15%"
   },
   {
     "area": "Jurong West",
-    "region": "",
-    "top": "%",
-    "left": "%"
+    "region": "west",
+    "top": "65%",
+    "left": "22%"
   },
   {
     "area": "Kallang",
-    "region": "",
-    "top": "%",
-    "left": "%"
+    "region": "central",
+    "top": "55%",
+    "left": "55%"
   },
   {
     "area": "Lim Chu Kang",
-    "region": "",
-    "top": "%",
-    "left": "%"
+    "region": "northwest",
+    "top": "30%",
+    "left": "20%"
   },
   {
     "area": "Mandai",
-    "region": "",
-    "top": "%",
-    "left": "%"
+    "region": "north",
+    "top": "30%",
+    "left": "40%"
   },
   {
     "area": "Marine Parade",
-    "region": "",
-    "top": "%",
-    "left": "%"
+    "region": "central",
+    "top": "62%",
+    "left": "65%"
   },
   {
     "area": "Novena",
-    "region": "",
-    "top": "%",
-    "left": "%"
+    "region": "central",
+    "top": "48%",
+    "left": "52%"
   },
   {
     "area": "Pasir Ris",
-    "region": "",
-    "top": "%",
-    "left": "%"
+    "region": "east",
+    "top": "45%",
+    "left": "68%"
   },
   {
     "area": "Paya Lebar",
-    "region": "",
-    "top": "%",
-    "left": "%"
+    "region": "east",
+    "top": "50%",
+    "left": "62%"
   },
   {
     "area": "Pioneer",
-    "region": "",
-    "top": "%",
-    "left": "%"
+    "region": "west",
+    "top": "70%",
+    "left": "20%"
   },
   {
     "area": "Pulau Tekong",
-    "region": "",
-    "top": "%",
-    "left": "%"
+    "region": "northeast",
+    "top": "30%",
+    "left": "75%"
   },
   {
     "area": "Pulau Ubin",
-    "region": "",
-    "top": "%",
-    "left": "%"
+    "region": "northeast",
+    "top": "35%",
+    "left": "72%"
   },
   {
     "area": "Punggol",
-    "region": "",
-    "top": "%",
-    "left": "%"
+    "region": "northeast",
+    "top": "40%",
+    "left": "60%"
   },
   {
     "area": "Queenstown",
-    "region": "",
-    "top": "%",
-    "left": "%"
+    "region": "central",
+    "top": "55%",
+    "left": "45%"
   },
   {
     "area": "Seletar",
-    "region": "",
-    "top": "%",
-    "left": "%"
+    "region": "north",
+    "top": "38%",
+    "left": "52%"
   },
   {
     "area": "Sembawang",
     "region": "north",
     "top": "20%",
-    "left": "43%"
+    "left": "45%"
   },
   {
     "area": "Sengkang",
-    "region": "",
-    "top": "%",
-    "left": "%"
+    "region": "northeast",
+    "top": "43%",
+    "left": "57%"
   },
   {
     "area": "Sentosa",
-    "region": "",
-    "top": "%",
-    "left": "%"
+    "region": "south",
+    "top": "72%",
+    "left": "45%"
   },
   {
     "area": "Serangoon",
-    "region": "",
-    "top": "%",
-    "left": "%"
+    "region": "northeast",
+    "top": "45%",
+    "left": "53%"
   },
   {
     "area": "Southern Islands",
-    "region": "",
-    "top": "%",
-    "left": "%"
+    "region": "south",
+    "top": "75%",
+    "left": "50%"
   },
   {
     "area": "Sungei Kadut",
-    "region": "",
-    "top": "%",
-    "left": "%"
+    "region": "north",
+    "top": "30%",
+    "left": "30%"
   },
   {
     "area": "Tampines",
-    "region": "",
-    "top": "%",
-    "left": "%"
+    "region": "east",
+    "top": "55%",
+    "left": "70%"
   },
   {
     "area": "Tanglin",
-    "region": "",
-    "top": "%",
-    "left": "%"
+    "region": "central",
+    "top": "50%",
+    "left": "40%"
   },
   {
     "area": "Tengah",
-    "region": "",
-    "top": "%",
-    "left": "%"
+    "region": "west",
+    "top": "58%",
+    "left": "25%"
   },
   {
     "area": "Toa Payoh",
-    "region": "",
-    "top": "%",
-    "left": "%"
+    "region": "central",
+    "top": "52%",
+    "left": "53%"
   },
   {
     "area": "Tuas",
-    "region": "",
-    "top": "%",
-    "left": "%"
+    "region": "west",
+    "top": "75%",
+    "left": "10%"
   },
   {
     "area": "Western Islands",
-    "region": "",
-    "top": "%",
-    "left": "%"
+    "region": "southwest",
+    "top": "80%",
+    "left": "15%"
   },
   {
     "area": "Western Water Catchment",
-    "region": "",
-    "top": "%",
-    "left": "%"
+    "region": "west",
+    "top": "40%",
+    "left": "15%"
   },
   {
     "area": "Woodlands",
-    "region": "",
-    "top": "%",
-    "left": "%"
+    "region": "north",
+    "top": "20%",
+    "left": "35%"
   },
   {
     "area": "Yishun",
-    "region": "",
-    "top": "%",
-    "left": "%"
+    "region": "north",
+    "top": "32%",
+    "left": "50%"
   }
 ]
