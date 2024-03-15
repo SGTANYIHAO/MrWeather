@@ -1,21 +1,17 @@
 import React from "react";
 import map02 from "../img/Singapore_Map02.jpg";
-
 import Display from "./Display";
-
-import { ReactComponent as YourSvg } from "../img/cloud_icon/rain.svg";
 
 const Dashboard = () => {
   return (
     <>
-      <Display></Display>
-
+      {/* using React Draggable Function  */}
+      <Display />
       <div className="container">
+        {/* Import the map  */}
         <img src={map02} alt="Map of Singapore" />
-
-        <button className="btn Sembawang">
-          <YourSvg />
-        </button>
+        {/* Generate all map by using map function */}
+        <button className="btn Sembawang" />
       </div>
     </>
   );

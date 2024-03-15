@@ -1,21 +1,20 @@
 .container {
   z-index: 1;
-  width: 100em;
-  height: 71em;
+  width: 100%; /* Adjusted for responsiveness */
   max-width: 100%;
-  position: relative; /* This is crucial for absolute positioning of children */
+  height: auto; /* Adjust height automatically based on the aspect ratio */
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden; /* Prevents scrollbars if the viewport is smaller than the container */
+  overflow: hidden;
 }
 
-/* Assuming im# is a direct child of .container, otherwise, consider a class */
 .container img {
-  width: 100%; /* Makes the image responsive to the container's width */
+  width: 100%; /* Full width of the container */
   height: auto; /* Maintain aspect ratio */
-  max-width: 100em; /* Your desired max width */
-  max-height: 71em; /* And max height */
+  max-width: 100em; /* Your desired max width, though you might want to adjust this */
+  max-height: 71em; /* And max height, consider adjusting or removing for responsiveness */
 }
 
 .btn {
@@ -24,33 +23,34 @@
   width: 1rem;
   height: 1rem;
   border-radius: 100%;
-  transform: translate(-50%, -50%); /* Centers the button, adjust if needed */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 50px; /* Adjust based on your needs */
-  height: 50px; /* Adjust based on your needs */
-  padding: 0; /* Removes default padding */
-  border: none; /* Optional: removes border */
-  background: none; /* Optional: removes background */
+  background-color: #008cba; /* Default background color */
+  color: white; /* Default text color */
 }
 
 .btn:hover {
-  background-color: #008cba;
-  color: white;
+  background-color: #005f8b; /* Darker shade on hover for better interaction feedback */
 }
 
 .display {
   position: absolute;
   z-index: 999;
   color: white;
-  top: 20%; /* Adjust these to position the button over a specific part of the map */
-  left: 14rem; /* Same as above */
-  transform: translate(-50%, -50%); /* Centers the button, adjust if needed */
-  background: lightgreen;
-  width: 20rem;
+  top: 20%;
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%);
+  background: blue;
+  width: 18rem;
   height: 25rem;
-  border: 1px solid #d3d3d3;
+  border: 1px solid #0743ce;
   text-align: center;
   border-radius: 20%;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 2rem) {
+  .btn {
+    width: 2rem; /* Larger size for better touch */
+    height: 2rem;
+  }
+  /* Consider additional adjustments for .display or other elements here */
 }
