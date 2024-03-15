@@ -1,0 +1,293 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Data.gov.sg APIs",
+    "description": "\"APIs for People\"",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://api.data.gov.sg/v1"
+    }
+  ],
+  "paths": {
+    "/environment/24-hour-weather-forecast": {
+      "get": {
+        "summary": "Retrieve the latest 24 hour weather forecast",
+        "description": "- Updated multiple times throughout the day\n- A general forecast for the 24 hour period is provided\n- Forecasts for each major region in Singapore is also provided for 6/12 hour periods\n- Use the `date_time` parameter to retrieve the latest forecast issued at that moment in time.\n- Use the `date` parameter to retrieve all of the forecasts issued for that day\n",
+        "tags": ["Environment"],
+        "parameters": [
+          {
+            "name": "date_time",
+            "in": "query",
+            "description": "YYYY-MM-DD[T]HH:mm:ss (SGT)",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "date",
+            "in": "query",
+            "description": "YYYY-MM-DD",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "24 Hour Weather Forecast",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "api_info": {
+                      "$ref": "#/components/schemas/ApiInfo"
+                    },
+                    "area_metadata": {
+                      "$ref": "#/components/schemas/AreaMetadata"
+                    },
+                    "items": {
+                      "type": "array",
+                      "description": "Array of items",
+                      "items": {
+                        "$ref": "#/components/schemas/24HourWeatherForecast"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/Error"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ApiInfo": {
+        "type": "object",
+        "description": "Contains information about the API (from Data.gov.sg)",
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": ["healthy"]
+          }
+        }
+      },
+      "AreaMetadata": {
+        "type": "array",
+        "description": "Additional information on areas provided",
+        "items": {
+          "type": "object",
+          "required": ["name", "label_location"],
+          "properties": {
+            "name": {
+              "type": "string",
+              "description": "Name of the area"
+            },
+            "label_location": {
+              "type": "object",
+              "description": "Provides longitude and latitude for placing readings on a map",
+              "required": ["longitude", "latitude"],
+              "properties": {
+                "longitude": {
+                  "type": "number"
+                },
+                "latitude": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        }
+      },
+      "24HourWeatherForecast": {
+        "type": "object",
+        "required": [
+          "update_timestamp",
+          "timestamp",
+          "valid_period",
+          "general",
+          "periods"
+        ],
+        "properties": {
+          "update_timestamp": {
+            "type": "string",
+            "description": "Time of acquisition of data from NEA",
+            "format": "date-time"
+          },
+          "timestamp": {
+            "type": "string",
+            "description": "Time forecast was issued by NEA",
+            "format": "date-time"
+          },
+          "valid_period": {
+            "type": "object",
+            "description": "Period of time the forecast is valid for",
+            "required": ["start", "end"],
+            "properties": {
+              "start": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "end": {
+                "type": "string",
+                "format": "date-time"
+              }
+            }
+          },
+          "general": {
+            "type": "object",
+            "description": "A general weather forecast for the 24 hour period",
+            "required": [
+              "forecast",
+              "relative_humidity",
+              "temperature",
+              "wind"
+            ],
+            "properties": {
+              "forecast": {
+                "type": "string"
+              },
+              "relative_humidity": {
+                "type": "object",
+                "description": "Unit of measure -  Percentage",
+                "required": ["low", "high"],
+                "properties": {
+                  "low": {
+                    "type": "number"
+                  },
+                  "high": {
+                    "type": "number"
+                  }
+                }
+              },
+              "temperature": {
+                "type": "object",
+                "description": "Unit of measure -  Degrees Celsius",
+                "required": ["low", "high"],
+                "properties": {
+                  "low": {
+                    "type": "number"
+                  },
+                  "high": {
+                    "type": "number"
+                  }
+                }
+              },
+              "wind": {
+                "type": "object",
+                "required": ["speed", "direction"],
+                "properties": {
+                  "speed": {
+                    "type": "object",
+                    "description": "Unit of measure -  Kilometeres per hour",
+                    "required": ["low", "high"],
+                    "properties": {
+                      "low": {
+                        "type": "number"
+                      },
+                      "high": {
+                        "type": "number"
+                      }
+                    }
+                  },
+                  "direction": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "periods": {
+          "type": "array",
+          "description": "Regional forecasts for 6/12 hour periods",
+          "items": {
+            "type": "object",
+            "required": ["time", "regions"],
+            "properties": {
+              "time": {
+                "$ref": "#/components/schemas/ForecastValidPeriod"
+              },
+              "regions": {
+                "type": "object",
+                "required": ["north", "south", "east", "west", "central"],
+                "properties": {
+                  "north": {
+                    "type": "string",
+                    "description": "Forecast for the north region of Singapore"
+                  },
+                  "south": {
+                    "type": "string",
+                    "description": "Forecast for the south region of Singapore"
+                  },
+                  "east": {
+                    "type": "string",
+                    "description": "Forecast for the east region of Singapore"
+                  },
+                  "west": {
+                    "type": "string",
+                    "description": "Forecast for the west region of Singapore"
+                  },
+                  "central": {
+                    "type": "string",
+                    "description": "Forecast for the central region of Singapore"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "ForecastValidPeriod": {
+        "type": "object",
+        "description": "Period of time the forecast is valid for",
+        "required": ["start", "end"],
+        "properties": {
+          "start": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "end": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+
+      "Error": {
+        "type": "object",
+        "required": ["code", "message"],
+        "properties": {
+          "code": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "responses": {
+      "Error": {
+        "description": "Error information",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            }
+          }
+        }
+      }
+    }
+  }
+}

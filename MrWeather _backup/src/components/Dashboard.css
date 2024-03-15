@@ -1,0 +1,52 @@
+.container {
+  z-index: 1;
+  width: 100em;
+  height: 71em;
+  max-width: 100%;
+  position: relative; /* This is crucial for absolute positioning of children */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Prevents scrollbars if the viewport is smaller than the container */
+}
+
+/* Assuming im# is a direct child of .container, otherwise, consider a class */
+.container img {
+  width: 100%; /* Makes the image responsive to the container's width */
+  height: auto; /* Maintain aspect ratio */
+  max-width: 100em; /* Your desired max width */
+  max-height: 71em; /* And max height */
+}
+
+.btn {
+  z-index: 2;
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 100%;
+}
+
+.Sembawang {
+  top: 52%; /* Adjust these to position the button over a specific part of the map */
+  left: 47%; /* Same as above */
+  transform: translate(-50%, -50%); /* Centers the button, adjust if needed */
+}
+
+.btn:hover {
+  background-color: #008cba;
+  color: white;
+}
+
+.display {
+  position: absolute;
+  z-index: 49;
+  color: white;
+  top: 20%; /* Adjust these to position the button over a specific part of the map */
+  left: 14rem; /* Same as above */
+  transform: translate(-50%, -50%); /* Centers the button, adjust if needed */
+  background: lightgreen;
+  width: 20rem;
+  height: 25rem;
+  border: 1px solid #d3d3d3;
+  text-align: center;
+}
