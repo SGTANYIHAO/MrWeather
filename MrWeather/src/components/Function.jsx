@@ -1,6 +1,15 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import Dashboard from "./Dashboard";
 
 const Function = () => {
+  const [items, setItem] = useState([]);
+  const [weathers, setWeather] = useState({
+    update: {},
+    weather: {},
+    psi: {},
+  });
+
+  // This function is hypothetical and assumes you call it right after fetching your data
   const getWeather = async (signal) => {
     try {
       const res = await fetch(
@@ -12,7 +21,7 @@ const Function = () => {
 
       if (res.ok) {
         const data = await res.json();
-        console.log(data);
+        setItem(data.items[0]);
       }
     } catch (error) {
       if (error.name !== "AbortError") {
@@ -48,7 +57,16 @@ const Function = () => {
     return () => controller.abort();
   }, []);
 
-  return;
+  useEffect(() => {
+    console.log(items.forecasts);
+  }, [items]);
+
+  /* Ensure item and items.forecasts is not null */
+  return items && items.forecasts ? (
+    <Dashboard weather={items.forecasts}></Dashboard>
+  ) : (
+    <div>Loading...</div>
+  );
 };
 
 export default Function;
