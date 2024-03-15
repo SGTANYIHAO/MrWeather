@@ -1,8 +1,284 @@
 [
   {
-    "name": "Sembawang",
+    "area": "Ang Mo Kio",
+    "region": "",
+    "top": "%",
+    "left": "%"
+  },
+  {
+    "area": "Bedok",
+    "region": "",
+    "top": "%",
+    "left": "%"
+  },
+  {
+    "area": "Bishan",
+    "region": "",
+    "top": "%",
+    "left": "%"
+  },
+  {
+    "area": "Boon Lay",
+    "region": "",
+    "top": "%",
+    "left": "%"
+  },
+  {
+    "area": "Bukit Batok",
+    "region": "",
+    "top": "%",
+    "left": "%"
+  },
+  {
+    "area": "Bukit Merah",
+    "region": "",
+    "top": "%",
+    "left": "%"
+  },
+  {
+    "area": "Bukit Panjang",
+    "region": "",
+    "top": "%",
+    "left": "%"
+  },
+  {
+    "area": "Bukit Timah",
+    "region": "",
+    "top": "%",
+    "left": "%"
+  },
+  {
+    "area": "Central Water Catchment",
+    "region": "",
+    "top": "%",
+    "left": "%"
+  },
+  {
+    "area": "Changi",
+    "region": "",
+    "top": "%",
+    "left": "%"
+  },
+  {
+    "area": "Choa Chu Kang",
+    "region": "",
+    "top": "%",
+    "left": "%"
+  },
+  {
+    "area": "Clementi",
+    "region": "",
+    "top": "%",
+    "left": "%"
+  },
+  {
+    "area": "City",
+    "region": "",
+    "top": "%",
+    "left": "%"
+  },
+  {
+    "area": "Geylang",
+    "region": "",
+    "top": "%",
+    "left": "%"
+  },
+  {
+    "area": "Hougang",
+    "region": "",
+    "top": "%",
+    "left": "%"
+  },
+  {
+    "area": "Jalan Bahar",
+    "region": "",
+    "top": "%",
+    "left": "%"
+  },
+  {
+    "area": "Jurong East",
+    "region": "",
+    "top": "%",
+    "left": "%"
+  },
+  {
+    "area": "Jurong Island",
+    "region": "",
+    "top": "%",
+    "left": "%"
+  },
+  {
+    "area": "Jurong West",
+    "region": "",
+    "top": "%",
+    "left": "%"
+  },
+  {
+    "area": "Kallang",
+    "region": "",
+    "top": "%",
+    "left": "%"
+  },
+  {
+    "area": "Lim Chu Kang",
+    "region": "",
+    "top": "%",
+    "left": "%"
+  },
+  {
+    "area": "Mandai",
+    "region": "",
+    "top": "%",
+    "left": "%"
+  },
+  {
+    "area": "Marine Parade",
+    "region": "",
+    "top": "%",
+    "left": "%"
+  },
+  {
+    "area": "Novena",
+    "region": "",
+    "top": "%",
+    "left": "%"
+  },
+  {
+    "area": "Pasir Ris",
+    "region": "",
+    "top": "%",
+    "left": "%"
+  },
+  {
+    "area": "Paya Lebar",
+    "region": "",
+    "top": "%",
+    "left": "%"
+  },
+  {
+    "area": "Pioneer",
+    "region": "",
+    "top": "%",
+    "left": "%"
+  },
+  {
+    "area": "Pulau Tekong",
+    "region": "",
+    "top": "%",
+    "left": "%"
+  },
+  {
+    "area": "Pulau Ubin",
+    "region": "",
+    "top": "%",
+    "left": "%"
+  },
+  {
+    "area": "Punggol",
+    "region": "",
+    "top": "%",
+    "left": "%"
+  },
+  {
+    "area": "Queenstown",
+    "region": "",
+    "top": "%",
+    "left": "%"
+  },
+  {
+    "area": "Seletar",
+    "region": "",
+    "top": "%",
+    "left": "%"
+  },
+  {
+    "area": "Sembawang",
     "region": "north",
     "top": "20%",
     "left": "43%"
+  },
+  {
+    "area": "Sengkang",
+    "region": "",
+    "top": "%",
+    "left": "%"
+  },
+  {
+    "area": "Sentosa",
+    "region": "",
+    "top": "%",
+    "left": "%"
+  },
+  {
+    "area": "Serangoon",
+    "region": "",
+    "top": "%",
+    "left": "%"
+  },
+  {
+    "area": "Southern Islands",
+    "region": "",
+    "top": "%",
+    "left": "%"
+  },
+  {
+    "area": "Sungei Kadut",
+    "region": "",
+    "top": "%",
+    "left": "%"
+  },
+  {
+    "area": "Tampines",
+    "region": "",
+    "top": "%",
+    "left": "%"
+  },
+  {
+    "area": "Tanglin",
+    "region": "",
+    "top": "%",
+    "left": "%"
+  },
+  {
+    "area": "Tengah",
+    "region": "",
+    "top": "%",
+    "left": "%"
+  },
+  {
+    "area": "Toa Payoh",
+    "region": "",
+    "top": "%",
+    "left": "%"
+  },
+  {
+    "area": "Tuas",
+    "region": "",
+    "top": "%",
+    "left": "%"
+  },
+  {
+    "area": "Western Islands",
+    "region": "",
+    "top": "%",
+    "left": "%"
+  },
+  {
+    "area": "Western Water Catchment",
+    "region": "",
+    "top": "%",
+    "left": "%"
+  },
+  {
+    "area": "Woodlands",
+    "region": "",
+    "top": "%",
+    "left": "%"
+  },
+  {
+    "area": "Yishun",
+    "region": "",
+    "top": "%",
+    "left": "%"
   }
 ]
