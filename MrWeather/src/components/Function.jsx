@@ -8,14 +8,15 @@ import locationMap from "../js/Location.json";
 // Update the story Board.
 const Function = () => {
   const [items, setItem] = useState([]);
+  const [psiReading, setpsiReading] = useState([]);
+  const [locations, setLocations] = useState([]);
   const [weathers, setWeather] = useState({
     update: "",
+    area: "",
     weather: "",
-    psi: "",
+    psi: {},
     region: "",
   });
-
-  const [locations, setLocations] = useState([]);
 
   // This function is hypothetical and assumes you call it right after fetching your data
   const getWeather = async (signal) => {
@@ -49,7 +50,7 @@ const Function = () => {
 
       if (res.ok) {
         const data = await res.json();
-        console.log(data);
+        setpsiReading(data.items[0].readings.psi_twenty_four_hourly);
       }
     } catch (error) {
       if (error.name !== "AbortError") {
@@ -59,7 +60,16 @@ const Function = () => {
   };
 
   const selectArea = (area) => {
-    return items.forecasts.find((forecast) => forecast.area === area);
+    const tempResult = items.forecasts.find(
+      (forecast) => forecast.area === area
+    );
+    //console.log(items.update_timestamp);
+    weathers.weather = tempResult.forecast;
+    weathers.area = tempResult.area;
+    weathers.update = items.update_timestamp;
+    weathers.psi = psiReading;
+    console.log(weathers);
+    return tempResult;
   };
 
   useEffect(() => {
@@ -74,12 +84,16 @@ const Function = () => {
   }, [items]);
 
   useEffect(() => {
+    console.log(psiReading);
+  }, [psiReading]);
+
+  useEffect(() => {
     setLocations(locationMap);
     console.log(locations);
   }, []);
 
   /* Ensure item and items.forecasts is not null */
-  return items && items.forecasts ? (
+  return items && items.forecasts && psiReading ? (
     <Dashboard
       weather={items.forecasts}
       locations={locations}
