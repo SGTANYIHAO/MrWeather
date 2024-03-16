@@ -9,10 +9,10 @@ import locationMap from "../js/Location.json";
 const Function = () => {
   const [items, setItem] = useState([]);
   const [weathers, setWeather] = useState({
-    update: {},
-    weather: {},
-    psi: {},
-    region: {},
+    update: "",
+    weather: "",
+    psi: "",
+    region: "",
   });
 
   const [locations, setLocations] = useState([]);
@@ -59,7 +59,7 @@ const Function = () => {
   };
 
   const selectArea = (area) => {
-    forecasts.find((forecast) => forecast.area === area);
+    return items.forecasts.find((forecast) => forecast.area === area);
   };
 
   useEffect(() => {
@@ -80,7 +80,13 @@ const Function = () => {
 
   /* Ensure item and items.forecasts is not null */
   return items && items.forecasts ? (
-    <Dashboard weather={items.forecasts} locations={locations}></Dashboard>
+    <Dashboard
+      weather={items.forecasts}
+      locations={locations}
+      selectArea={selectArea}
+      weathers={weathers}
+      setWeather={setWeather}
+    ></Dashboard>
   ) : (
     <div>Loading...</div>
   );

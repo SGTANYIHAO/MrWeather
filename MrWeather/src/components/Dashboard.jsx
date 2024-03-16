@@ -7,7 +7,7 @@ const Dashboard = (props) => {
   return (
     <>
       {/* using React Draggable Function  */}
-      <Display weather={props.weather} />
+      <Display /*  weather={props.weather} weathers={weathers} */ />
       <div className="container">
         {/* Import the map  */}
         <img src={map02} alt="Map of Singapore" />
@@ -18,6 +18,7 @@ const Dashboard = (props) => {
             btnName={location.area}
             btnLeft={location.left}
             btnTop={location.top}
+            selectArea={props.selectArea}
           />
         ))}
       </div>

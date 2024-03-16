@@ -1,12 +1,18 @@
 import React from "react";
 import Draggable from "react-draggable";
+import imgFairWarm from "../img/cloud_icon/partly-cloudy-day.svg";
+import imgUnknown from "../img/cloud_icon/thunderstorms.svg";
 
 const Button = (props) => {
   const btnStyle = {
     position: "absolute", // Ensure position is absolute or fixed for left/top to work.
     left: props.btnLeft,
     top: props.btnTop,
-
+    backgroundImage: `url(${
+      props.selectArea(props.btnName).forecast === "Fair & Warm"
+        ? imgFairWarm
+        : imgUnknown
+    })`,
     // Initial left and top set through props, but actual positioning managed by Draggable.
   };
 
@@ -39,9 +45,15 @@ const Button = (props) => {
         className={`btn ${props.btnName}`}
         name={props.btnName}
         style={btnStyle}
-        onClick={(event) => console.log(event.target.name)}
+        onClick={(event) => {
+          console.log(event.target.name);
+          console.log(props.selectArea(event.target.name));
+        }}
       >
-        {props.btnName}
+        <label className="lblBtn">
+          {/* Content you want to show below the button */}
+          {props.btnName}
+        </label>
       </button>
     </Draggable>
   );

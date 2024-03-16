@@ -20,12 +20,32 @@
 .btn {
   z-index: 2;
   position: absolute;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 100%;
+
+  color: white; /* Default text color */
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.lblBtn {
+  margin-top: 3rem;
+}
+
+/* 
+Edited 2024 03 16
+.btn {
+  z-index: 2;
+  position: absolute;
   width: 1rem;
   height: 1rem;
   border-radius: 100%;
-  background-color: #008cba; /* Default background color */
-  color: white; /* Default text color */
-}
+  background-color: #008cba; 
+  color: white; 
+  background-repeat: none;
+}  
+*/
 
 .btn:hover {
   background-color: #005f8b; /* Darker shade on hover for better interaction feedback */
