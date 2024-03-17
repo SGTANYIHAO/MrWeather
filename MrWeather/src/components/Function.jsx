@@ -1,24 +1,41 @@
 import React, { useState, useEffect } from "react";
 import Dashboard from "./Dashboard";
 import locationMap from "../js/Location.json";
-// Require 3 more component.
-// Router into Error Page.
-// Project Folder issues
-// Comit
-// Update the story Board.
-const Function = () => {
-  const [items, setItem] = useState([]);
-  const [psiReading, setpsiReading] = useState([]);
-  const [locations, setLocations] = useState([]);
-  const [weathers, setWeather] = useState({
-    update: "",
-    area: "",
-    weather: "",
-    psi: {},
-    region: "",
-  });
+import imgFairWarm from "../img/cloud_icon/clear-day.svg";
+import imgRaining from "../img/cloud_icon/rain.svg";
+import imgPartlyCloudyDay from "../img/cloud_icon/partly-cloudy-day.svg";
+import imgLightShower from "../img/cloud_icon/drizzle.svg";
+import imgThunderyShower from "../img/cloud_icon/thunderstorms-rain.svg";
+import imgPartyCloudyNight from "../img/cloud_icon/partly-cloudy-night.svg";
+import imgCloudy from "../img/cloud_icon/overcast.svg";
+import imgHeavyThunderyShower from "../img/cloud_icon/thunderstorms-rain.svg";
 
-  // This function is hypothetical and assumes you call it right after fetching your data
+const Function = (props) => {
+  function selectBackgroundImage(forecast) {
+    switch (forecast) {
+      case "Fair & Warm":
+        return imgFairWarm;
+      case "Showers":
+        return imgRaining;
+      case "Partly Cloudy (Day)":
+        return imgPartlyCloudyDay;
+
+      case "Light Showers":
+        return imgLightShower;
+      case "Heavy Thundery Showers":
+      //return imgHeavyThunderyShower;
+      case "Thundery Showers":
+        return imgHeavyThunderyShower;
+
+      case "Partly Cloudy (Night)":
+        return imgPartyCloudyNight;
+      case "Cloudy":
+        return imgCloudy;
+      default:
+        return imgRaining;
+    }
+  }
+
   const getWeather = async (signal) => {
     try {
       const res = await fetch(
@@ -30,7 +47,7 @@ const Function = () => {
 
       if (res.ok) {
         const data = await res.json();
-        setItem(data.items[0]);
+        props.setItem(data.items[0]);
       }
     } catch (error) {
       if (error.name !== "AbortError") {
@@ -50,7 +67,7 @@ const Function = () => {
 
       if (res.ok) {
         const data = await res.json();
-        setpsiReading(data.items[0].readings.psi_twenty_four_hourly);
+        props.setpsiReading(data.items[0].readings.psi_twenty_four_hourly);
       }
     } catch (error) {
       if (error.name !== "AbortError") {
@@ -60,15 +77,17 @@ const Function = () => {
   };
 
   const selectArea = (area) => {
-    const tempResult = items.forecasts.find(
+    const tempResult = props.items.forecasts.find(
       (forecast) => forecast.area === area
     );
-    //console.log(items.update_timestamp);
-    weathers.weather = tempResult.forecast;
-    weathers.area = tempResult.area;
-    weathers.update = items.update_timestamp;
-    weathers.psi = psiReading;
-    console.log(weathers);
+
+    props.weathers.weather = tempResult.forecast;
+    props.weathers.area = tempResult.area;
+    props.weathers.update = props.items.update_timestamp;
+    props.weathers.psi = props.psiReading;
+    const tempResult1 = locationMap.find((loca) => loca.area === area);
+    props.weathers.region = tempResult1.region;
+    //console.log(props.weathers);
     return tempResult;
   };
 
@@ -80,26 +99,20 @@ const Function = () => {
   }, []);
 
   useEffect(() => {
-    console.log(items.forecasts);
-  }, [items]);
-
-  useEffect(() => {
-    console.log(psiReading);
-  }, [psiReading]);
-
-  useEffect(() => {
-    setLocations(locationMap);
-    console.log(locations);
-  }, []);
+    props.setLocations(locationMap);
+    //console.log(props.locations);
+  }, [props.locations, props.weathers, props.items]);
 
   /* Ensure item and items.forecasts is not null */
-  return items && items.forecasts && psiReading ? (
+  return props.items && props.items.forecasts && props.psiReading ? (
     <Dashboard
-      weather={items.forecasts}
-      locations={locations}
+      selectBackgroundImage={selectBackgroundImage}
+      weather={props.items.forecasts}
+      locations={props.locations}
       selectArea={selectArea}
-      weathers={weathers}
-      setWeather={setWeather}
+      weathers={props.weathers}
+      setWeather={props.setWeather}
+      forecast={props.forecast}
     ></Dashboard>
   ) : (
     <div>Loading...</div>

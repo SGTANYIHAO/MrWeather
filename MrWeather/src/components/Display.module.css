@@ -1,0 +1,83 @@
+.display {
+  position: absolute;
+  z-index: 999;
+  color: white;
+  top: 15%;
+  left: 2%; /* Center horizontally */
+  transform: translate(-50%, -50%);
+  background-image: url("../img/display_background.gif");
+  width: 18rem;
+  height: 10rem;
+  border: 1px solid #0743ce;
+  text-align: center;
+  border-radius: 4%;
+}
+
+.gridContainer {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: repeat(5, 1fr);
+  position: absolute;
+}
+
+.gridContainer > h1 {
+  grid-column-start: 1;
+  grid-column-end: 6;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.gridContainer > label {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 4;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 100%; /* Take full height of its parent */
+  font-weight: bold;
+  /* visibility: hidden; */
+}
+
+.gridContainer > img {
+  grid-column-start: 4;
+  grid-column-end: 6;
+  grid-row-start: 2;
+  grid-row-end: 4;
+  width: 100%;
+  height: 100%; /* Take full height of its parent */
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  text-align: center;
+}
+
+.gridContainer > label2 {
+  grid-column-start: 4;
+  grid-column-end: 6;
+  grid-row-start: 4;
+  grid-row-end: 6;
+  width: 100%;
+  height: 100%; /* Take full height of its parent */
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  text-align: center;
+  font-weight: bold;
+}
+
+.gridContainer > label3 {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 4;
+  grid-row-end: 6;
+  width: 100%;
+  height: 100%; /* Take full height of its parent */
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  font-weight: bold;
+}
