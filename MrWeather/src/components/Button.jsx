@@ -1,5 +1,5 @@
 import React from "react";
-import Draggable from "react-draggable";
+//import Draggable from "react-draggable";
 
 const Button = (props) => {
   // Image selection function

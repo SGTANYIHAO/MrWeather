@@ -14,6 +14,7 @@ const Dashboard = (props) => {
       props.setWeather([]);
     }
   };
+
   return (
     <>
       {/* using React Draggable Function  */}

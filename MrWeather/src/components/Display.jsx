@@ -1,6 +1,5 @@
 import React from "react";
 import Draggable from "react-draggable";
-import rain from "../img/cloud_icon/clear-day.svg";
 import styles from "./Display.module.css";
 
 const Display = (props) => {
