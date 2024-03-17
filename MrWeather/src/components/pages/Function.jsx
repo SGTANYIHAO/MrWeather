@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
-import Dashboard from "./Dashboard";
-import locationMap from "../js/Location.json";
-import imgFairWarm from "../img/cloud_icon/clear-day.svg";
-import imgRaining from "../img/cloud_icon/rain.svg";
-import imgPartlyCloudyDay from "../img/cloud_icon/partly-cloudy-day.svg";
-import imgLightShower from "../img/cloud_icon/drizzle.svg";
-import imgThunderyShower from "../img/cloud_icon/thunderstorms-rain.svg";
-import imgPartyCloudyNight from "../img/cloud_icon/partly-cloudy-night.svg";
-import imgCloudy from "../img/cloud_icon/overcast.svg";
-import imgHeavyThunderyShower from "../img/cloud_icon/thunderstorms-rain.svg";
+import Dashboard from "../Dashboard";
+import locationMap from "../../js/Location.json";
+import imgFairWarm from "../../img/cloud_icon/clear-day.svg";
+import imgRaining from "../../img/cloud_icon/rain.svg";
+import imgPartlyCloudyDay from "../../img/cloud_icon/partly-cloudy-day.svg";
+import imgLightShower from "../../img/cloud_icon/drizzle.svg";
+import imgThunderyShower from "../../img/cloud_icon/thunderstorms-rain.svg";
+import imgPartyCloudyNight from "../../img/cloud_icon/partly-cloudy-night.svg";
+import imgCloudy from "../../img/cloud_icon/overcast.svg";
+import imgHeavyThunderyShower from "../../img/cloud_icon/thunderstorms-rain.svg";
 
 const Function = (props) => {
   function selectBackgroundImage(forecast) {

@@ -45,3 +45,7 @@
   }
   /* Consider additional adjustments for .display or other elements here */
 }
+
+.Loading {
+  background-color: aquamarine;
+}
