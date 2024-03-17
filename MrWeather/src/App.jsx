@@ -19,7 +19,7 @@ function App() {
 
   return (
     <Router>
-      <Suspense fallback={<Loading></Loading>}>
+      <Suspense fallback={<Loading />}>
         <Routes>
           <Route path="/" element={<Navigate replace to="/Dashboard" />} />
           <Route

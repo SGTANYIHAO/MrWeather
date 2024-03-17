@@ -31,6 +31,8 @@
 
 .lblBtn {
   margin-top: 3rem;
+
+  font-size: smaller;
 }
 
 .btn:hover {
