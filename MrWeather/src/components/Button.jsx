@@ -30,22 +30,25 @@ const Button = (props) => {
       region={props.btnRegion}
       style={btnStyle}
       onClick={(event) => {
-        //console.log(event.target.name);
-        console.log(props.weathers);
         props.selectArea(event.target.name);
+        props.toggleVisibility();
         if (props.btnName === props.weathers.area) {
-          props.toggleVisibility();
-          console.log(`${props.btnName} match ${props.weathers.area}`);
+          console.log(props.weathers);
 
-          userInsert()(
-            props.userName,
-            props.weathers.area,
-            props.weathers.psi[props.weathers.region],
-            props.weathers.region,
-            props.weathers.weather,
-            props.weathers.update,
-            new Date()
-          );
+          const date = new Date();
+          let localTime = date.toLocaleTimeString();
+          // if false and userName not none will write into Air Table
+          if (props.isDisplayVisible === false) {
+            userInsert()(
+              props.userName,
+              props.weathers.area,
+              props.weathers.psi[props.weathers.region],
+              props.weathers.region,
+              props.weathers.weather,
+              props.weathers.update,
+              localTime
+            );
+          }
         } else {
           props.selectArea(event.target.name);
           props.toggleVisibility();

@@ -42,6 +42,8 @@ const Dashboard = (props) => {
             weathers={props.weathers}
             setWeather={props.setWeather}
             toggleVisibility={toggleVisibility}
+            isDisplayVisible={isDisplayVisible}
+            userName={props.userName}
           />
         ))}
       </div>

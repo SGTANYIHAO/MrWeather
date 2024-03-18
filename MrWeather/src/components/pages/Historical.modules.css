@@ -38,7 +38,7 @@
   grid-column-end: 6;
   grid-row-start: 2;
   grid-row-end: 3;
-  text-align: right;
+  text-align: center;
   font-size: xx-large;
 }
 .gridContainer > .btnEnterSearch {
@@ -72,4 +72,52 @@
   color: black;
   font-size: medium;
   background-color: white;
+
+  border-style: solid;
+  border-width: 1px;
+  border-color: white;
+}
+.displayHistory > div .field,
+.header {
+  font-family: "Times New Roman", Times, serif;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+}
+
+div > .header {
+  font-size: large;
+  font-weight: bolder;
+}
+
+.btnEnterSearch,
+.btnDeleteHistory {
+  border: 0;
+  line-height: 2.5;
+  padding: 0 20px;
+  font-size: 1rem;
+  text-align: center;
+  color: #fff;
+  text-shadow: 1px 1px 1px #000;
+  border-radius: 10px;
+  background-color: rgb(0, 143, 220);
+  background-image: linear-gradient(
+    to top left,
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.2) 30%,
+    rgba(0, 0, 0, 0)
+  );
+  box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6),
+    inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+}
+
+.btnEnterSearch:hover,
+.btnDeleteHistory:hover {
+  background-color: rgb(14, 67, 160);
+}
+
+.btnEnterSearch:active,
+.btnDeleteHistory:active {
+  box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+    inset 2px 2px 3px rgba(0, 0, 0, 0.6);
 }

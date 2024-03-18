@@ -23,7 +23,7 @@ const NavBar = (props) => {
               Historical
             </NavLink>
           </li>
-          <li>Username: {props.userName}</li>
+          <h1 className="Username">Username: {props.userName}</h1>
         </ul>
       </nav>
     </header>

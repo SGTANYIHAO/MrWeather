@@ -1,6 +1,6 @@
 .navbar {
   height: 5rem;
-  background-color: red;
+  background-color: blue;
 }
 .navbar nav {
   height: 100%;
@@ -22,6 +22,12 @@
   color: white;
   text-decoration: none;
 }
+
+h1 {
+  color: white;
+  font-family: "Times New Roman", Times, serif;
+}
+
 .navbar a:hover,
 .navbar a:active,
 .navbar a.active {

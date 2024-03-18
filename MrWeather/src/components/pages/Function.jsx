@@ -113,6 +113,7 @@ const Function = (props) => {
       weathers={props.weathers}
       setWeather={props.setWeather}
       forecast={props.forecast}
+      userName={props.userName}
     ></Dashboard>
   ) : (
     <div>Loading...</div>

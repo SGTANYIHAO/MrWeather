@@ -10,18 +10,17 @@ const userInsert = () => {
     update,
     timestamp
   ) => {
-    console.log("UserInsert line 13");
-    const res = await fetch(`${import.meta.env.AIR_TABLE_SERVER}`, {
+    const res = await fetch(import.meta.env.VITE_AIR_TABLE_SERVER, {
       method: "POST",
       headers: {
-        Authorization: `${import.meta.env.AIR_TABLE_TOKEN}`,
+        Authorization: import.meta.env.VITE_AIR_TABLE_TOKEN,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
         fields: {
           USER: user,
           AREA: area,
-          PSI: psi,
+          PSI: psi.toString(),
           REGION: region,
           WEATHER: weather,
           UPDATE: update,
