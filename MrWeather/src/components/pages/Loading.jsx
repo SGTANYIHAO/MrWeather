@@ -4,7 +4,7 @@ import "./Loading.modules.css"; // Assuming you will create a CSS file for styli
 const Loading = () => {
   return (
     <div className="loader-container">
-      <div className="loader">Loading . . . .</div>
+      <div className="loader"></div>
     </div>
   );
 };

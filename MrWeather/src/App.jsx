@@ -38,6 +38,7 @@ function App() {
                 setLocations={setLocations}
                 weathers={weathers}
                 setWeather={setWeather}
+                userName={userName}
               />
             }
           />

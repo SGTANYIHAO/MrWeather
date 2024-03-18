@@ -1,18 +1,16 @@
 import React from "react";
+import userInsert from "./pages/hooks/userInsert";
 //import Draggable from "react-draggable";
 
 const Button = (props) => {
-  // Image selection function
-
   const btnStyle = {
-    position: "absolute", // Ensure position is absolute or fixed for left/top to work.
+    position: "absolute",
     left: props.btnLeft,
     top: props.btnTop,
     backgroundImage: `url(${props.selectBackgroundImage(
       props.selectArea(props.btnName).forecast
     )})`,
     transform: props.transform,
-    // Initial left and top set through props, but actual positioning managed by Draggable.
   };
 
   // Function to handle the drag stop event.
@@ -26,10 +24,6 @@ const Button = (props) => {
   };
 
   return (
-    /*     <Draggable
-      onStop={handleStop} // Assign the event handler.
-      bounds="parent" // Restrict movement within the parent container.
-    > */
     <button
       className={`btn ${props.btnName}`}
       name={props.btnName}
@@ -37,9 +31,25 @@ const Button = (props) => {
       style={btnStyle}
       onClick={(event) => {
         //console.log(event.target.name);
-
-        props.toggleVisibility();
+        console.log(props.weathers);
         props.selectArea(event.target.name);
+        if (props.btnName === props.weathers.area) {
+          props.toggleVisibility();
+          console.log(`${props.btnName} match ${props.weathers.area}`);
+
+          userInsert()(
+            props.userName,
+            props.weathers.area,
+            props.weathers.psi[props.weathers.region],
+            props.weathers.region,
+            props.weathers.weather,
+            props.weathers.update,
+            new Date()
+          );
+        } else {
+          props.selectArea(event.target.name);
+          props.toggleVisibility();
+        }
       }}
     >
       <label className="lblBtn">
