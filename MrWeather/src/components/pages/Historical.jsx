@@ -1,71 +1,22 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import "./Historical.modules.css";
-// Assuming userGetRecord is correctly imported or defined elsewhere if needed
 
-const Historical = (props) => {
-  const [history, setHistory] = useState([]);
-  const [inputUserName, setInputUserName] = useState("");
-  const [totalLength, setTotalLength] = useState();
-
+const Historical = ({
+  history,
+  userName,
+  handleUserChange,
+  userGetRecord,
+  useDeleteRecord,
+}) => {
   useEffect(
     () => {
-      // Assuming you want to call userGetRecord with the updated userName prop
-      // This effect will re-run whenever props.userName changes
-      if (props.userName) {
-        userGetRecord(props.userName);
+      if (userName) {
+        userGetRecord(userName);
       }
-      /*       if (history.length === totalLength) {
-        console.log(history[0].id);
-      } */
     },
-    [props.userName],
+    [userName],
     [history]
   );
-
-  const userGetRecord = async (user) => {
-    console.log(user);
-    const res = await fetch(
-      `${
-        import.meta.env.VITE_AIR_TABLE_SERVER
-      }?filterByFormula=%7BUSER%7D%20%3D%20%27${user}%27`,
-      {
-        method: "GET",
-        headers: {
-          Authorization: import.meta.env.VITE_AIR_TABLE_TOKEN,
-        },
-      }
-    );
-    if (res.ok) {
-      console.log("Successfully Return Value");
-      const data = await res.json();
-
-      setTotalLength(data.records.length);
-      setHistory(data.records); // Directly store the records for simplicity
-    }
-  };
-
-  const useDeleteRecord = async (history) => {
-    for (const record of history) {
-      const res = await fetch(
-        `${import.meta.env.VITE_AIR_TABLE_SERVER}/${record.id}`,
-        {
-          method: "DELETE",
-          headers: {
-            Authorization: `${import.meta.env.VITE_AIR_TABLE_TOKEN}`,
-            "Content-Type": "application/json",
-          },
-        }
-      );
-      if (res.ok) {
-        console.log(`Successfully Deleted ${record.id}`);
-        setHistory((currentHistory) =>
-          currentHistory.filter((item) => item.id !== record.id)
-        );
-      } else {
-        console.error(`Failed to delete ${record.id}`);
-      }
-    }
-  };
 
   return (
     <div className="gridContainer">
@@ -73,16 +24,13 @@ const Historical = (props) => {
       <label>Enter Your Name</label>
       <input
         type="text"
-        value={inputUserName} // Use value instead of inputValue
-        onChange={(e) => setInputUserName(e.target.value)}
+        value={userName}
+        onChange={(e) => handleUserChange(e.target.value)}
       />
       <button
         className="btnEnterSearch"
         onClick={() => {
-          props.setUserName(inputUserName);
-          if (inputUserName) {
-            userGetRecord(inputUserName);
-          } // Call with inputUserName
+          userGetRecord(userName);
         }}
       >
         Enter Search
@@ -91,9 +39,7 @@ const Historical = (props) => {
       <button
         className="btnDeleteHistory"
         onClick={() => {
-          if (history.length > 0) {
-            useDeleteRecord(history);
-          }
+          useDeleteRecord(history);
         }}
       >
         Delete History
