@@ -9,6 +9,7 @@ import imgThunderyShower from "../../img/cloud_icon/thunderstorms-rain.svg";
 import imgPartyCloudyNight from "../../img/cloud_icon/partly-cloudy-night.svg";
 import imgCloudy from "../../img/cloud_icon/overcast.svg";
 import imgHeavyThunderyShower from "../../img/cloud_icon/thunderstorms-rain.svg";
+import imgClearday from "../../img/cloud_icon/clear-day.svg";
 
 const Function = (props) => {
   function selectBackgroundImage(forecast) {
@@ -30,7 +31,10 @@ const Function = (props) => {
       case "Partly Cloudy (Night)":
         return imgPartyCloudyNight;
       case "Cloudy":
-        return imgCloudy;
+      case "Partly Cloudy (Night)":
+        return imgPartyCloudyNight;
+      case "Fair (Day)":
+        return imgClearday;
       default:
         return imgRaining;
     }
@@ -102,6 +106,19 @@ const Function = (props) => {
     props.setLocations(locationMap);
     //console.log(props.locations);
   }, [props.locations, props.weathers, props.items]);
+
+  const fetchData = () => {
+    const controller = new AbortController();
+    const { signal } = controller;
+    getWeather(signal);
+    getPSI(signal);
+  };
+
+  useEffect(() => {
+    fetchData();
+    const interval = setInterval(fetchData, 5 * 60 * 1000);
+    return () => clearInterval(interval);
+  }, []);
 
   /* Ensure item and items.forecasts is not null */
   return props.items && props.items.forecasts && props.psiReading ? (

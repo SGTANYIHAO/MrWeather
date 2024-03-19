@@ -10,9 +10,7 @@ const Historical = ({
 }) => {
   useEffect(
     () => {
-      if (userName) {
-        userGetRecord(userName);
-      }
+      userGetRecord(userName);
     },
     [userName],
     [history]
