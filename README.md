@@ -14,7 +14,7 @@ are added. Additionally, it includes options for customizing the settings for st
 
 # Figure01. (Dashboard Page)
 
-![![alt text](image.png)](/src/img/info/Dsahboard.jpg)
+![![alt text](image.png)](/src/img/info/Dashboard.jpg)
 
 # Figure 02. (Historical page)
 
