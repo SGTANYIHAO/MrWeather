@@ -5,14 +5,14 @@ import {
   Route,
   Routes,
 } from "react-router-dom";
-import "./components/Dashboard.css";
+import "./pages/Dashboard.css";
 import NavBar from "./components/NavBar";
 
 // Lazy loaded components help improve render
-const Loading = React.lazy(() => import("./components/pages/Loading"));
-const Function = React.lazy(() => import("./components/pages/Function"));
-const Historical = React.lazy(() => import("./components/pages/Historical"));
-const NotFound = React.lazy(() => import("./components/pages/NotFound"));
+const Loading = React.lazy(() => import("./pages/Loading"));
+const Function = React.lazy(() => import("./pages/Function"));
+const Historical = React.lazy(() => import("./pages/Historical"));
+const NotFound = React.lazy(() => import("./pages/NotFound"));
 
 function App() {
   //Props Sharing State
