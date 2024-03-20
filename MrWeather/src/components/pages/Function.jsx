@@ -10,6 +10,7 @@ import imgPartyCloudyNight from "../../img/cloud_icon/partly-cloudy-night.svg";
 import imgCloudy from "../../img/cloud_icon/overcast.svg";
 import imgHeavyThunderyShower from "../../img/cloud_icon/thunderstorms-rain.svg";
 import imgClearday from "../../img/cloud_icon/clear-day.svg";
+import Loading from "../pages/Loading";
 
 const Function = (props) => {
   function selectBackgroundImage(forecast) {
@@ -28,9 +29,8 @@ const Function = (props) => {
       case "Thundery Showers":
         return imgHeavyThunderyShower;
 
-      case "Partly Cloudy (Night)":
-        return imgPartyCloudyNight;
       case "Cloudy":
+        return imgCloudy;
       case "Partly Cloudy (Night)":
         return imgPartyCloudyNight;
       case "Fair (Day)":
@@ -133,7 +133,9 @@ const Function = (props) => {
       userName={props.userName}
     ></Dashboard>
   ) : (
-    <div>Loading...</div>
+    <div>
+      <Loading />
+    </div>
   );
 };
 
