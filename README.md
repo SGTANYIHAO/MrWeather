@@ -8,7 +8,7 @@ are added. Additionally, it includes options for customizing the settings for st
 
 ## Description (Gameplay Stage6)
 
-![![alt text](image.png)](/src/img/info/Dashboard_Overall.gif)
+![![alt text](image.png)](/src/img/info/MrWeather.gif)
 
 ## Getting Started
 
