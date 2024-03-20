@@ -10,6 +10,9 @@ Introducing MrWeather Dashboard application for real-time weather forecasts and 
 MrWeather enables users to revisit their recently viewed 
 weather updates by location through a dedicated historical page.
 
+Notice.
+MrWeather will update the forecasts every 5minutes.
+
 # Figure01. (Dashboard Page)
 
 ![![alt text](image.png)](/src/img/info/Dashboard.jpg)
@@ -32,8 +35,10 @@ weather updates by location through a dedicated historical page.
 
 ## Next Steps
 
-- Cloud Animation
-- Effect Animation
+- Enhance the area forecast representation by adding more cloud animations.
+- Implement effect animations to visually depict the current conditions across the overall map for an intuitive user experience.
+- Sound Effect.
+- User Notification.
 
 ## Authors
 
