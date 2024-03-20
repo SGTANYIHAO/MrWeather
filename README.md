@@ -2,7 +2,7 @@
 
 Introducing MrWeather Dashboard application for real-time weather forecasts and PSI reporting. Stay updated effortlessly!
 
-## Description (Gameplay Stage6)
+## Description (Overall Dashboard)
 
 ![![alt text](image.png)](/src/img/info/MrWeather.gif)
 
