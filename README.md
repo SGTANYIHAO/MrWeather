@@ -2,7 +2,7 @@
 
 # Project Weather Broadcast
 
-Introducing MrWeather Dashboard: your go-to application for real-time weather forecasts and PSI reporting. Stay updated effortlessly!
+Introducing MrWeather Dashboard application for real-time weather forecasts and PSI reporting. Stay updated effortlessly!
 
 ## Description (Gameplay Stage6)
 
