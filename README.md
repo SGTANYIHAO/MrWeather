@@ -1,6 +1,4 @@
-# SEI49-Project02
-
-# Project Weather Broadcast
+# Project MrWeather Broadcast
 
 Introducing MrWeather Dashboard application for real-time weather forecasts and PSI reporting. Stay updated effortlessly!
 
