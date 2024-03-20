@@ -27,7 +27,7 @@ weather updates by location through a dedicated historical page.
 - CSS
 - JAVASCRIPT
 - REACT
-- AirTable
+- AIRTABLE
 - API (DATA.GOV.SG)
 
 ## Next Steps
